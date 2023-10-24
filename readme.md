@@ -102,7 +102,7 @@ Returns a JSON object containing information about the transactions of the API k
 
 #### Response
 
-- `200 OK` - Returns a JSON object containing a list of all transactions assosciated with an API key.
+- `200 OK` - Returns a JSON object containing a list of symbols or specific symbol information.
 
 ##### Example
 
@@ -125,7 +125,7 @@ Response:
 
 ### POST /api/symbol/create
 
-Creates a new symbol.
+A POST endpoint for creating a new symbol.
 
 #### Query Parameters
 
@@ -157,6 +157,49 @@ Content-Type: application/json
     "sector": "Technology",
     "industry": "Software",
     "outstanding_shares": 1000000
+}
+```
+
+Response:
+
+```json
+{
+    {
+    "status": {
+        "status": "success"
+    }
+}
+}
+```
+
+### POST /api/order/add
+A POST endpoint for adding a new order.
+
+#### Query Parameters
+
+- `api_key` (required): The API key for the user making the request.
+
+#### Request Body
+
+- `symbol` (required) - The symbol of the stock being traded.
+- `side` (required) - The side of the order representing the buyer or seller.
+- `price` (required) - The price of the order.
+- `volume` (required) - The volume of the order.
+
+#### Response
+
+- `200 OK` - Returns a JSON object containing status of the order placement.
+
+##### Example
+
+```
+POST /api/order/add?api_key=1234567890
+
+{
+  "symbol": "AAPL",
+  "side": "BUY",
+  "price": 150.0,
+  "volume": 100
 }
 ```
 
