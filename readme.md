@@ -1,6 +1,3 @@
-GitHub Copilot: Sure, here's an updated version of the API documentation with example code and responses:
-
-```markdown
 # ISEX - API Documentation
 
 ## Endpoints
