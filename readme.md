@@ -114,12 +114,9 @@ GET /transactions?api_key=1234567890
 
 Response:
 ```json
-[
     {'id': 1, 'time': '2023-10-24 09:30:01', 'symbol': 'AAPL', 'side': 'BUY', 'price': 150.10, 'volume': 500},
     {'id': 2, 'time': '2023-10-24 09:30:02', 'symbol': 'MSFT', 'side': 'SELL', 'price': 220.20, 'volume': 300},
     {'id': 3, 'time': '2023-10-24 09:30:03', 'symbol': 'MAMA', 'side': 'BUY', 'price': 10.30, 'volume': 1000},
-    ...
-]
 ```
 
 ### POST /api/symbol/create
