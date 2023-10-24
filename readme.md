@@ -24,7 +24,7 @@ Response:
 {
     "endpoints": [
         "/api",
-        "/api/retrieve",
+        "/api/symbol/retrieve",
         "/api/symbol/create"
     ]
 }
