@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: Example API
+  description: This is an example API
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000
+paths:
+  /api/retrieve:
+    get:
+      summary: Retrieve symbols
+      description: Returns a list of symbols
+      parameters:
+        - name: api_key
+          in: query
+          required: true
+          description: Imperius Securities Exchange API Key.
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of symbols to retrieve
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: A list of symbols
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    symbol:
+                      type: string
+                      description: The symbol
+                    price:
+                      type: number
+                      description: The price of the symbol
