@@ -1,4 +1,4 @@
-# API Documentation
+# ISEX API Documentation
 
 ## Endpoints
 
