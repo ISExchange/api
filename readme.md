@@ -1,4 +1,7 @@
-# ISEX API Documentation
+GitHub Copilot: Sure, here's an updated version of the API documentation with example code and responses:
+
+```markdown
+# ISEX - API Documentation
 
 ## Endpoints
 
@@ -9,6 +12,26 @@ Returns a list of available endpoints.
 #### Response
 
 - `200 OK` - Returns a JSON object containing a list of available endpoints.
+
+##### Example
+
+Request:
+
+```
+GET /api
+```
+
+Response:
+
+```json
+{
+    "endpoints": [
+        "/api",
+        "/api/retrieve",
+        "/api/symbol/create"
+    ]
+}
+```
 
 ### GET /api/retrieve
 
@@ -21,6 +44,29 @@ Returns a list of symbols.
 #### Response
 
 - `200 OK` - Returns a JSON object containing a list of symbols.
+
+##### Example
+
+Request:
+
+```
+GET /api/retrieve?api_key=1234567890
+```
+
+Response:
+
+```json
+{
+    "symbols": [
+        {
+            "symbol": "AAPL"
+        },
+        {
+            "symbol": "GOOG"
+        }
+    ]
+}
+```
 
 ### POST /api/symbol/create
 
@@ -42,6 +88,35 @@ Creates a new symbol.
 
 - `200 OK` - Returns a JSON object containing status, and error message (if any).
 
+##### Example
+
+Request:
+
+```
+POST /api/symbol/create?api_key=1234567890
+Content-Type: application/json
+
+{
+    "symbol": "MSFT",
+    "name": "Microsoft Corporation",
+    "sector": "Technology",
+    "industry": "Software",
+    "outstanding_shares": 1000000
+}
+```
+
+Response:
+
+```json
+{
+    {
+    "status": {
+        "status": "success"
+    }
+}
+}
+```
+
 ## Authentication
 
 All endpoints require authentication using an API key. The API key must be passed as a query parameter in the request URL.
@@ -50,6 +125,7 @@ If the API key is not valid or is missing, the endpoint will return a `401 Unaut
 
 ## Permissions
 
+Some endpoints require specific permissions to access. The required permissions are specified in the `require_permission` decorator for each endpoint.
 
 If the API key does not have the required permissions, the endpoint will return a `403 Forbidden` error.
 
