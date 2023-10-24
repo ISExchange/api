@@ -98,7 +98,7 @@ Returns a JSON object containing information about the transactions of the API k
 
 #### Query Parameters
 
-- `api_key` (required): The API key for the user making the request.
+- `api_key` (required) - The API key for the user making the request.
 
 #### Response
 
