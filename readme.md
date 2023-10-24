@@ -102,7 +102,7 @@ Returns a JSON object containing information about the transactions of the API k
 
 #### Response
 
-- `200 OK` - Returns a JSON object containing a list of symbols or specific symbol information.
+- `200 OK` - Returns a JSON object containing a list of all transactions assosciated with an API key.
 
 ##### Example
 
