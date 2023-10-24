@@ -92,7 +92,27 @@ Response:
 }
 ```
 
+## RetrieveTransactions
 
+This class provides a GET endpoint for retrieving specific transactions.
+
+### Endpoint
+
+`GET /transactions`
+
+### Parameters
+
+- `api_key` (required): The API key for the user making the request.
+
+### Returns
+
+Returns a JSON object containing information about the transactions of the API key.
+
+### Example
+
+```
+GET /transactions?api_key=1234567890
+```
 
 ### POST /api/symbol/create
 
