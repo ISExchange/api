@@ -30,24 +30,28 @@ Response:
 }
 ```
 
-### GET /api/retrieve
+### GET /api/symbol/retrieve
 
-Returns a list of symbols.
+Returns a list of symbols or specific symbol information.
 
 #### Query Parameters
 
 - `api_key` (required) - The API key to use for authentication.
 
+#### Request Body
+
+- `symbol` (optional) - The symbol to retrieve information for.
+
 #### Response
 
-- `200 OK` - Returns a JSON object containing a list of symbols.
+- `200 OK` - Returns a JSON object containing a list of symbols or specific symbol information.
 
 ##### Example
 
 Request:
 
 ```
-GET /api/retrieve?api_key=1234567890
+GET /api/symbol/retrieve?api_key=1234567890
 ```
 
 Response:
@@ -55,15 +59,40 @@ Response:
 ```json
 {
     "symbols": [
-        {
-            "symbol": "AAPL"
-        },
-        {
-            "symbol": "GOOG"
-        }
+        "AAPL",
+        "MSFT",
+        "GOOG",
+        "AMZN"
     ]
 }
 ```
+
+Request:
+
+```
+GET /api/symbol/retrieve?api_key=1234567890
+Content-Type: application/json
+
+{
+    "symbol": "AAPL"
+}
+```
+
+Response:
+
+```json
+{
+    "symbol": "AAPL",
+    "name": "Apple Inc.",
+    "last": 148.48,
+    "sector": "Technology",
+    "industry": "Consumer Electronics",
+    "sharesOutstanding": 16687500000,
+    "marketCap": 247630000000
+}
+```
+
+
 
 ### POST /api/symbol/create
 
