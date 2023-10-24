@@ -114,9 +114,32 @@ GET /transactions?api_key=1234567890
 
 Response:
 ```json
-    {'id': 1, 'time': '2023-10-24 09:30:01', 'symbol': 'AAPL', 'side': 'BUY', 'price': 150.10, 'volume': 500},
-    {'id': 2, 'time': '2023-10-24 09:30:02', 'symbol': 'MSFT', 'side': 'SELL', 'price': 220.20, 'volume': 300},
-    {'id': 3, 'time': '2023-10-24 09:30:03', 'symbol': 'MAMA', 'side': 'BUY', 'price': 10.30, 'volume': 1000},
+[
+    {
+        'id': 1,
+        'time': 1631234567.890,
+        'symbol': 'AAPL',
+        'side': 'BUY',
+        'price': 150.0,
+        'volume': 100
+    },
+    {
+        'id': 2,
+        'time': 1631234578.901,
+        'symbol': 'GOOG',
+        'side': 'SELL',
+        'price': 2000.0,
+        'volume': 50
+    },
+    {
+        'id': 3,
+        'time': 1631234589.012,
+        'symbol': 'AAPL',
+        'side': 'SELL',
+        'price': 155.0,
+        'volume': 75
+    }
+]
 ```
 
 ### POST /api/symbol/create
